@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Anúncios de Carros</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerador de Anúncios Guaru Prime 🚗✨</h1>
+            <p>Cole as informações do veículo abaixo e clique em gerar para criar os textos de venda.</p>
+        </header>
+
+        <main>
+            <div class="input-area">
+                <textarea id="car-info-input" rows="6" placeholder="Ex: Chevrolet Onix LT 1.0 2020, branco, flex, 45.000km, câmbio manual, completo com ar, direção elétrica, vidros e travas. Placa final 3. Único dono."></textarea>
+                <button id="generate-btn">Gerar Descrições</button>
+            </div>
+
+            <div id="loader" class="loader" style="display: none;">
+                Gerando textos com a IA... Por favor, aguarde.
+            </div>
+
+            <div id="results-area" class="results-area" style="display: none;">
+                <div class="result-box">
+                    <div class="result-header">
+                        <h2>Descrição para MarketPlace</h2>
+                        <button class="copy-btn" data-target="marketplace-output">Copiar Texto</button>
+                    </div>
+                    <pre id="marketplace-output"></pre>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-header">
+                        <h2>Descrição para Redes Sociais</h2>
+                        <button class="copy-btn" data-target="social-media-output">Copiar Texto</button>
+                    </div>
+                    <pre id="social-media-output"></pre>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
